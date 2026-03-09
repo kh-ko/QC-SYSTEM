@@ -74,7 +74,7 @@ export default function Layout({ session }) {
             </Drawer>
 
             {/* 3. 중앙 작업 공간 (메뉴를 누를 때마다 이 안의 내용(Outlet)만 바뀝니다) */}
-            <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f5f5', p: 3, minHeight: '100vh' }}>
+            <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f5f5', p: 3, minHeight: '100vh', width: `calc(100vw - ${drawerWidth}px)`, overflowX: 'hidden' }}>
                 <Toolbar /> {/* 상단 헤더 높이만큼 여백 확보 */}
                 <Outlet />
             </Box>

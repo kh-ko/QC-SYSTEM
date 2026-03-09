@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Layout from './components/Layout';
 import IssueList from './pages/IssueList';
 import VersionManagement from './pages/VersionManagement';
+import IssuePopup from './pages/IssuePopup';
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -43,6 +44,9 @@ export default function App() {
         <Route path="issues" element={<IssueList />} />
         <Route path="versions" element={<VersionManagement />} />
       </Route>
+      {/* 팝업 전용 라우트 (Layout 미적용) */}
+      <Route path="/issues/new" element={<IssuePopup />} />
+      <Route path="/issues/:id/edit" element={<IssuePopup />} />
     </Routes>
   );
 }
